@@ -14,14 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.greeter.web;
+package com.softtrons.web;
 
+import com.softtrons.domain.User;
+import com.softtrons.domain.UserDao;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.jboss.as.quickstarts.greeter.domain.User;
-import org.jboss.as.quickstarts.greeter.domain.UserDao;
 
 @Named
 @RequestScoped

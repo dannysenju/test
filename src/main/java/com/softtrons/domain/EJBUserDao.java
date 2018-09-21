@@ -14,34 +14,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jboss.as.quickstarts.greeter;
+package com.softtrons.domain;
 
-import java.util.logging.Logger;
-
-import javax.enterprise.context.RequestScoped;
-import javax.enterprise.inject.Produces;
-import javax.enterprise.inject.spi.InjectionPoint;
-import javax.faces.context.FacesContext;
+import javax.ejb.Stateful;
+import javax.enterprise.inject.Alternative;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import javax.persistence.NoResultException;
+import javax.persistence.Query;
 
-public class Resources {
+@Stateful
+@Alternative
+public class EJBUserDao implements UserDao {
 
-    // Expose an entity manager using the resource producer pattern
-    @PersistenceContext
-    @Produces
-    private EntityManager em;
+    @Inject
+    private EntityManager entityManager;
 
-    @Produces
-    public Logger getLogger(InjectionPoint ip) {
-        String category = ip.getMember().getDeclaringClass().getName();
-        return Logger.getLogger(category);
+    @Override
+    public User getForUsername(String username) {
+        try {
+            Query query = entityManager.createQuery("select u from User u where u.username = :username");
+            query.setParameter("username", username);
+            return (User) query.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
     }
 
-    @Produces
-    @RequestScoped
-    public FacesContext getFacesContext() {
-        return FacesContext.getCurrentInstance();
+    @Override
+    public void createUser(User user) {
+        entityManager.persist(user);
     }
 
 }
