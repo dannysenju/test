@@ -22,11 +22,12 @@
         this in META-INF/persistence.xml -->
     <datasource jndi-name="java:jboss/datasources/DemosDS"
         pool-name="demos" enabled="true" use-java-context="true">
-        <connection-url>jdbc:postgresql://ec2-54-163-246-5.compute-1.amazonaws.com:5432/d8i1d5aosc2338</connection-url>
+        <connection-url>postgres://bcymmcbzaygmqu:1c46fe39e8f4c2758f631502e6f1734dbde23170931e072ac9f33280dc2ceb35@ec2-54-83-27-165.compute-1.amazonaws.com:5432/deittbfolh2hvt
+</connection-url>
         <driver>postgresql</driver>		
         <security>
-            <user-name>rsqtzgbelrislb</user-name>
-            <password>325bf4e3fd1f78039cdb385935555424db6d95caedb632e18dd300eb41979f5e</password>
+            <user-name>bcymmcbzaygmqu</user-name>
+            <password>1c46fe39e8f4c2758f631502e6f1734dbde23170931e072ac9f33280dc2ceb35</password>
         </security>
 		
     </datasource>
