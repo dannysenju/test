@@ -5,3 +5,4 @@ target/
 faces-config.NavData
 nbactions.xml
 nb-configuration.xml
+src/main/webapp/WEB-INF/demos-local-ds.xml
