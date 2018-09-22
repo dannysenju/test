@@ -15,5 +15,5 @@
 -- limitations under the License.
 --
 
-INSERT INTO Users (ID, USERNAME, FIRSTNAME, LASTNAME) VALUES (1, 'jdoe', 'John', 'Doe');
-INSERT INTO Users (ID, USERNAME, FIRSTNAME, LASTNAME) VALUES (2, 'emuster', 'Erika', 'Mustermann'); 
+INSERT INTO users (ID, USERNAME, FIRSTNAME, LASTNAME) VALUES (-1, 'jdoe', 'John', 'Doe');
+INSERT INTO users (ID, USERNAME, FIRSTNAME, LASTNAME) VALUES (-2, 'emuster', 'Erika', 'Mustermann'); 

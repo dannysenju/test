@@ -16,19 +16,24 @@
  */
 package com.softtrons.domain;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 // User is a keyword in some SQL dialects!
-@Table(name = "Users")
-public class User {
+@Table(name = "users")
+public class User implements Serializable {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="user_seq")
+    @SequenceGenerator(name="user_seq", sequenceName="user_seq", allocationSize=1)
+    @Column(name = "id")
     private Long id;
 
     @Column(unique = true)
