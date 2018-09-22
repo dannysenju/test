@@ -43,11 +43,11 @@ language governing permissions and limitations under the License. -->
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
-        <dependency>
+<!--        <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>42.2.5</version>
-        </dependency>
+        </dependency>-->
 
         <!-- Import the CDI API, we use provided scope as the API is included 
         in JBoss EAP -->
